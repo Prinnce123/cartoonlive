@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cartoon Universe Live</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, #ffeb3b, #ff9800);
+    padding: 15px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    background: #111;
+    flex-wrap: wrap;
+}
+
+.menu button {
+    background: #222;
+    color: white;
+    border: 2px solid #ff9800;
+    padding: 16px 20px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.menu button:hover,
+.menu button:focus {
+    background: #ff9800;
+    color: black;
+}
+
+.player {
+    flex: 1;
+    position: relative;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: black;
+}
+
+footer {
+    text-align: center;
+    padding: 6px;
+    font-size: 12px;
+    color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎬 Cartoon Universe Live</header>
+
+<div class="container">
+
+    <div class="menu">
+        <button onclick="play('MODI_SPONGEBOB_LINK')">🧽 SpongeBob</button>
+        <button onclick="play('MODI_FAMILY_GUY_LINK')">👨‍👩‍👦 Family Guy</button>
+        <button onclick="play('MODI_SOUTH_PARK_LINK')">🤬 South Park</button>
+    </div>
+
+    <div class="player">
+        <iframe id="player"
+            allowfullscreen
+            allow="encrypted-media; picture-in-picture">
+        </iframe>
+    </div>
+
+</div>
+
+<footer>
+All streams are embedded from public sources. We do not host any content.
+</footer>
+
+<script>
+function play(url) {
+    document.getElementById("player").src = url;
+}
+</script>
+
+</body>
+</html>
